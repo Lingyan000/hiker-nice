@@ -1,0 +1,16 @@
+env:
+  node: true
+  es6: true
+
+parserOptions:
+  ecmaVersion: 2015
+  sourceType: "module"
+
+ignorePatterns:
+  - coverage/
+  - dist/
+  - rollup.config.js
+
+rules:
+  # "no-dupe-args": 2
+  # "no-console": 2
