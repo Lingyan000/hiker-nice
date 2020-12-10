@@ -3,6 +3,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
 import tslint from 'rollup-plugin-tslint';
 import typescript from 'rollup-plugin-typescript2';
+import { terser } from 'rollup-plugin-terser';
 
 const banner = {
     banner() {
@@ -16,9 +17,13 @@ const umd_out_base = { format: 'umd', name: 'hikerNice', exports: 'named' };
 
 export default {
     input: 'index.ts',
-    output: {
+    output: [{
         ...umd_out_base,
         file: 'dist/hiker-nice.js',
-    },
+    }, {
+        ...umd_out_base,
+        file: 'dist/hiker-nice.min.js',
+        plugins: [terser()]
+    }],
     plugins: plugins
 };
