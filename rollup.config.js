@@ -12,7 +12,7 @@ const banner = {
 const plugins = [typescript(), tslint(), nodeResolve(), commonjs(), banner];
 
 
-const umd_out_base = { format: 'umd', name: 'hikerview', exports: 'named' };
+const umd_out_base = { format: 'umd', name: 'hikerNice', exports: 'named' };
 
 export default {
     input: 'index.ts',
