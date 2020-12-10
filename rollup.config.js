@@ -6,7 +6,7 @@ import typescript from 'rollup-plugin-typescript2';
 
 const banner = {
     banner() {
-        return `/*! ${pkg.name} ${pkg.version} https://github.com/${pkg.repository} @license ${pkg.license} */`;
+        return `/*! ${pkg.name} ${pkg.version} https://github.com/${pkg.repository.url} @license ${pkg.license} */`;
     }
 }
 const plugins = [typescript(), tslint(), nodeResolve(), commonjs(), banner];
