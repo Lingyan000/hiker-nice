@@ -1,7 +1,4 @@
-declare function setError(str: string | object | number): void;
-declare function fetch(url: string, param: { [propName: string]: any }): string;
-declare function setHomeResult(result: { data: any[] }): string;
-declare function setSearchResult(result: { data: any[] }): string;
+/// <reference path = "./hiker.d.ts" />
 
 export function hiker_setError(str: string): void {
   setError(str);
