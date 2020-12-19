@@ -7,6 +7,7 @@ export default function request(config: HttpRequestConfig): HttpResponse {
     method = "get",
     headers,
     withStatusCode = true,
+    redirect = true,
   } = config;
   Object.keys(headers).forEach((name) => {
     if (data === null && name.toLowerCase() === "content-type") {
@@ -19,6 +20,7 @@ export default function request(config: HttpRequestConfig): HttpResponse {
       method,
       body: data,
       withStatusCode,
+      redirect,
     })
   );
   const responseHeaders = RES.headers;
@@ -30,6 +32,11 @@ export default function request(config: HttpRequestConfig): HttpResponse {
     config,
   };
   if (response.status >= 200 && response.status < 300) {
+    return response;
+  } else if (
+    redirect == false &&
+    [301, 302, 303, 307, 308].indexOf(response.status) !== -1
+  ) {
     return response;
   } else {
     throw new Error(`Request failed with status code ${response.status}`);

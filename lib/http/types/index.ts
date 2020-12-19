@@ -22,6 +22,7 @@ export interface HttpRequestConfig {
   params?: any;
   withStatusCode?: boolean;
   responseType?: XMLHttpRequestResponseType;
+  redirect?: boolean;
 }
 
 export interface HttpResponse<T = any> {
