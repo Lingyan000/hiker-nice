@@ -1,4 +1,3 @@
-import { hiker_setError } from "./utils/hiker";
 /**
  * 判断是否为JSON
  * @param {string} str
