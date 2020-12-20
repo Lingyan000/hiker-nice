@@ -8,6 +8,7 @@ export default function request(config: HttpRequestConfig): HttpResponse {
     headers,
     withStatusCode = true,
     redirect = true,
+    timeout = 10000,
   } = config;
   Object.keys(headers).forEach((name) => {
     if (data === null && name.toLowerCase() === "content-type") {
@@ -21,6 +22,7 @@ export default function request(config: HttpRequestConfig): HttpResponse {
       body: data,
       withStatusCode,
       redirect,
+      timeout,
     })
   );
   const responseHeaders = RES.headers;
